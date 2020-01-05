@@ -4,7 +4,7 @@ SEOTitle: beta's blog
 header-img: img/post-universe.jpg
 email: 
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, , iOS, Apple, iPhone"
+keyword: ""
 url: "http://luwangli.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/luwangli/luwangli.github.io.git" # you code repository
@@ -12,7 +12,7 @@ github_repo: "https://github.com/luwangli/luwangli.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "JUST DO IT"
-sidebar-avatar: /img/post-myprofile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/post-profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
