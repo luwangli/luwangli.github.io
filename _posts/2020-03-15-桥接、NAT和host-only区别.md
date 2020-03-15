@@ -96,6 +96,8 @@ host-only模式下，虚拟网络是一个封闭的网络，连接到该模式�
 ![vm ping baidu](/img/2020-03-15/vm-hostonly-pingbaidu.JPG)
 
 ## 参考
-https://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html
-https://www.jianshu.com/p/305f7384cfe9
+https://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html  
+
+https://www.jianshu.com/p/305f7384cfe9  
+
 https://blog.csdn.net/clevercode/article/details/45934233   
