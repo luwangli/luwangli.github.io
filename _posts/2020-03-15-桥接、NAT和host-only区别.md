@@ -1,100 +1,103 @@
 ---
 layout:     post
-title:      ÐéÄâ»ú3ÖÖÍøÂçÅäÖÃÇø±ð
-subtitle:   ÇÅ½Ó¡¢NAT¡¢Host-onlyÇø±ð
+title:      è™šæ‹Ÿæœº3ç§ç½‘ç»œé…ç½®åŒºåˆ«
+subtitle:   æ¡¥æŽ¥ã€NATã€Host-onlyåŒºåˆ«
 date:       2020-03-15
 author:     BY beta
 header-img: img/2020-03-09/head.png
 catalog:    true
 tags:
-    - ¼ÆËã»úÍøÂç
-    - ¹¤³ÌÏîÄ¿
+    - è®¡ç®—æœºç½‘ç»œ
+    - å·¥ç¨‹é¡¹ç›®
 ---
 
-## Ç°ÑÔ
-ÔÚVMware´´½¨ÐéÄâ»úÊ±£¬Í¨³£ÐèÒªÅäÖÃÍøÂç£¬³£¼ûµÄÑ¡ÏîÊÇÇÅ½ÓÄ£Ê½¡¢NAT
-Ä£Ê½ºÍ½öÖ÷»úÄ£Ê½£¬ÄÇÃ´ÈýÖÖÍøÂçÉèÖÃµÄÇø±ðÊÇÊ²Ã´ÄØ£¿½ÓÏÂÀ´ÎÒ»á¸ø´ó¼Ò
-×öÒ»¸öÏêÏ¸µÄ½âÊÍ¡£
-## 1.ÐéÄâÍø¿¨
-ÔÚ½éÉÜÍøÂçÉèÖÃÖ®Ç°£¬ÎÒÃÇµÃÖªµÀÐéÄâÍø¿¨µÄ¸ÅÄî¡£Ò»¸öÉè±¸Èç¹ûÐèÒªºÍÆäËû
-Éè±¸½»»¥£¬ÄÇÃ´±ØÐëÊ¹ÓÃÍø¿¨½øÐÐÊý¾Ý°üµÄ×ª·¢¡£ÄÇÃ´ÔÚVMwareÐéÄâ»ú°²×°
-Íê³ÉÖ®ºó£¬»á×Ô¶¯Ìí¼ÓÁ½¸öÐéÄâÍø¿¨£¬VMnet1ºÍVMnet8¡£
+## å‰è¨€
+åœ¨VMwareåˆ›å»ºè™šæ‹Ÿæœºæ—¶ï¼Œé€šå¸¸éœ€è¦é…ç½®ç½‘ç»œï¼Œå¸¸è§çš„é€‰é¡¹æ˜¯æ¡¥æŽ¥æ¨¡å¼ã€NAT
+æ¨¡å¼å’Œä»…ä¸»æœºæ¨¡å¼ï¼Œé‚£ä¹ˆä¸‰ç§ç½‘ç»œè®¾ç½®çš„åŒºåˆ«æ˜¯ä»€ä¹ˆå‘¢ï¼ŸæŽ¥ä¸‹æ¥æˆ‘ä¼šç»™å¤§å®¶
+åšä¸€ä¸ªè¯¦ç»†çš„è§£é‡Šã€‚
+## 1.è™šæ‹Ÿç½‘å¡
+åœ¨ä»‹ç»ç½‘ç»œè®¾ç½®ä¹‹å‰ï¼Œæˆ‘ä»¬å¾—çŸ¥é“è™šæ‹Ÿç½‘å¡çš„æ¦‚å¿µã€‚ä¸€ä¸ªè®¾å¤‡å¦‚æžœéœ€è¦å’Œå…¶ä»–
+è®¾å¤‡äº¤äº’ï¼Œé‚£ä¹ˆå¿…é¡»ä½¿ç”¨ç½‘å¡è¿›è¡Œæ•°æ®åŒ…çš„è½¬å‘ã€‚é‚£ä¹ˆåœ¨VMwareè™šæ‹Ÿæœºå®‰è£…
+å®Œæˆä¹‹åŽï¼Œä¼šè‡ªåŠ¨æ·»åŠ ä¸¤ä¸ªè™šæ‹Ÿç½‘å¡ï¼ŒVMnet1å’ŒVMnet8ã€‚
 
 ![network adapter](/img/2020-03-15/host-virtual-adapter.JPG)  
 
-ÈýÖÖÍøÂçÄ£Ê½ÓëÐéÄâÍø¿¨¶ÔÓ¦¹ØÏµ£º
-1. ÇÅ½Ó£ºVMnet0
-2. NAT£ºVMnet8
-3. Host-only£ºVMnet1
+ä¸‰ç§ç½‘ç»œæ¨¡å¼ä¸Žè™šæ‹Ÿç½‘å¡å¯¹åº”å…³ç³»ï¼š
+1. æ¡¥æŽ¥ï¼šVMnet0
+2. NATï¼šVMnet8
+3. Host-onlyï¼šVMnet1
 
-ÎÒÃÇ¿ÉÒÔÔÚËÞÖ÷»úµÄÍøÂçÉèÖÃÀïÃæ¿´µ½VMnet1ºÍVMnet8Á½ÕÅÍø¿¨£¬ÄÇÃ´VMnet0
-ÔÚÄÄÀïÄØ£¿Êµ¼ÊÉÏ£¬VMnet0Ó¦¸ÃÀí½â³É¶þ²ã½»»»»ú£¬ËÞÖ÷»úºÍÐéÄâ»ú¶¼Á¬½ÓÔÚ
-Õâ¸ö½»»»»úÉÏ¡£ÒòÎªÐéÄâ»úºÍËÞÖ÷»úÊÇÆ½µÈµÄ£¬²¢²»ÊÇÍ¨¹ýËÞÖ÷»úÈ¥·ÃÎÊ
-ÎïÀíÍøÂç£¬Òò´ËÔÚËÞÖ÷»úÖÐÊÇ²»´æÔÚVMnet0¡£[ÍøÓÑgsonliu](https://www.jianshu.com/p/305f7384cfe9)
-µÄÍ¼½âÊÍµÄºÜºÃ£¬ÈçÏÂ:  
+æˆ‘ä»¬å¯ä»¥åœ¨å®¿ä¸»æœºçš„ç½‘ç»œè®¾ç½®é‡Œé¢çœ‹åˆ°VMnet1å’ŒVMnet8ä¸¤å¼ ç½‘å¡ï¼Œé‚£ä¹ˆVMnet0
+åœ¨å“ªé‡Œå‘¢ï¼Ÿå®žé™…ä¸Šï¼ŒVMnet0åº”è¯¥ç†è§£æˆäºŒå±‚äº¤æ¢æœºï¼Œå®¿ä¸»æœºå’Œè™šæ‹Ÿæœºéƒ½è¿žæŽ¥åœ¨
+è¿™ä¸ªäº¤æ¢æœºä¸Šã€‚å› ä¸ºè™šæ‹Ÿæœºå’Œå®¿ä¸»æœºæ˜¯å¹³ç­‰çš„ï¼Œå¹¶ä¸æ˜¯é€šè¿‡å®¿ä¸»æœºåŽ»è®¿é—®
+ç‰©ç†ç½‘ç»œï¼Œå› æ­¤åœ¨å®¿ä¸»æœºä¸­æ˜¯ä¸å­˜åœ¨VMnet0ã€‚[ç½‘å‹gsonliu](https://www.jianshu.com/p/305f7384cfe9)
+çš„å›¾è§£é‡Šçš„å¾ˆå¥½ï¼Œå¦‚ä¸‹:  
 
 ![VMnet0](/img/2020-03-15/vmnet0.JPG)
 
-## 2.BridgeÇÅ½ÓÄ£Ê½
-ÇÅ½ÓÄ£Ê½Ä¬ÈÏÊ¹ÓÃVMnet0ÐéÄâÍø¿¨¡£¸ÃÄ£Ê½¿ÉÒÔÈÏÎªÊÇ½«ËÞÖ÷»ú¡¢ÐéÄâ»ú¶¼
-Á¬½Óµ½VMnet0ÉÏ£¬Òò´ËÐéÄâ»ú¿ÉÒÔÖ±½ÓÁ¬½Óµ½ÎïÀíÍøÂç£¬ÍØÆËÈçÏÂ:
+## 2.Bridgeæ¡¥æŽ¥æ¨¡å¼
+æ¡¥æŽ¥æ¨¡å¼é»˜è®¤ä½¿ç”¨VMnet0è™šæ‹Ÿç½‘å¡ã€‚è¯¥æ¨¡å¼å¯ä»¥è®¤ä¸ºæ˜¯å°†å®¿ä¸»æœºã€è™šæ‹Ÿæœºéƒ½
+è¿žæŽ¥åˆ°VMnet0ä¸Šï¼Œå› æ­¤è™šæ‹Ÿæœºå¯ä»¥ç›´æŽ¥è¿žæŽ¥åˆ°ç‰©ç†ç½‘ç»œï¼Œæ‹“æ‰‘å¦‚ä¸‹:  
+
 ![bridge topology](/img/2020-03-15/bridge-topo.JPG)
 
-ÔÚÐéÄâ»úÖÐÎÒÃÇ²é¿´ipµØÖ·£¨WLANµØÖ·£©¿ÉÒÔ·¢ÏÖ
+åœ¨è™šæ‹Ÿæœºä¸­æˆ‘ä»¬æŸ¥çœ‹ipåœ°å€ï¼ˆWLANåœ°å€ï¼‰å¯ä»¥å‘çŽ°
 ![bridge ip](/img/2020-03-15/bridge-ip-addr.JPG)
 
-ÔÚËÞÖ÷»úÖÐ£¬ÎÒÃÇÊÇÍ¨¹ýwifiÁ¬½ÓÍøÂç£¬¿ÉÒÔ¿´µ½ÏàÓ¦µÄIPµØÖ·
+åœ¨å®¿ä¸»æœºä¸­ï¼Œæˆ‘ä»¬æ˜¯é€šè¿‡wifiè¿žæŽ¥ç½‘ç»œï¼Œå¯ä»¥çœ‹åˆ°ç›¸åº”çš„IPåœ°å€
 
 ![host wlan ip](/img/2020-03-15/host-wlan-addr.JPG)
 
-ËùÒÔ£¬ÎÒÃÇ¿ÉÒÔÀí½â³ÉÔÚÇÅ½ÓÄ£Ê½ÏÂµÄÐéÄâ»ú£¬Êµ¼ÊÉÏ¾ÍÊÇÒ»¸ö¶ÀÁ¢µÄ¼ÆËã»ú
-Á¬½Óµ½ÁËÂ·ÓÉÆ÷£¬Â·ÓÉÆ÷¸øËü·ÖÅäÁËÒ»¸öIPµØÖ·¡£
-ÇÅ½ÓÄ£Ê½ÊÇ×îÎª¼òµ¥µÄÍøÂçÅäÖÃ£¬¿ÉÒÔÊ¹ÐéÄâ»ú¿ìËÙ¡¢·½±ãµÄÁ¬½Óµ½ÎïÀíÍøÂç¡£
+æ‰€ä»¥ï¼Œæˆ‘ä»¬å¯ä»¥ç†è§£æˆåœ¨æ¡¥æŽ¥æ¨¡å¼ä¸‹çš„è™šæ‹Ÿæœºï¼Œå®žé™…ä¸Šå°±æ˜¯ä¸€ä¸ªç‹¬ç«‹çš„è®¡ç®—æœº
+è¿žæŽ¥åˆ°äº†è·¯ç”±å™¨ï¼Œè·¯ç”±å™¨ç»™å®ƒåˆ†é…äº†ä¸€ä¸ªIPåœ°å€ã€‚
+æ¡¥æŽ¥æ¨¡å¼æ˜¯æœ€ä¸ºç®€å•çš„ç½‘ç»œé…ç½®ï¼Œå¯ä»¥ä½¿è™šæ‹Ÿæœºå¿«é€Ÿã€æ–¹ä¾¿çš„è¿žæŽ¥åˆ°ç‰©ç†ç½‘ç»œã€‚
 
-## 3.NATÄ£Ê½
-NATÄ£Ê½£¬È«³ÆÎª¡°Network address translation",¼´ÍøÂçµØÖ·×ª»»¡£¸ÃÄ£Ê½ÏÂ
-ÐéÄâ»úÁ¬½Óµ½ËÞÖ÷»úµÄÐéÄâÍø¿¨VMnet8£¬VMnet8³äµ±Â·ÓÉÆ÷¹¦ÄÜ£¬¸ºÔð½«ÐéÄâ»úÉÏ´«
-µÄÊý¾Ý°ü½øÐÐµØÖ·×ª»¯ºó·¢ËÍµ½ÎïÀíÍøÂç£¬ÎïÀíÍøÂç·µ»ØµÄÊý¾Ý°üÒ²Ðè×ª»¯µØÖ·ºó
-Í¨¹ýVMnet8·¢ËÍ¸øÐéÄâ»ú¡£ÍØÆËÈçÏÂ£º
+## 3.NATæ¨¡å¼
+NATæ¨¡å¼ï¼Œå…¨ç§°ä¸ºâ€œNetwork address translation",å³ç½‘ç»œåœ°å€è½¬æ¢ã€‚è¯¥æ¨¡å¼ä¸‹
+è™šæ‹Ÿæœºè¿žæŽ¥åˆ°å®¿ä¸»æœºçš„è™šæ‹Ÿç½‘å¡VMnet8ï¼ŒVMnet8å……å½“è·¯ç”±å™¨åŠŸèƒ½ï¼Œè´Ÿè´£å°†è™šæ‹Ÿæœºä¸Šä¼ 
+çš„æ•°æ®åŒ…è¿›è¡Œåœ°å€è½¬åŒ–åŽå‘é€åˆ°ç‰©ç†ç½‘ç»œï¼Œç‰©ç†ç½‘ç»œè¿”å›žçš„æ•°æ®åŒ…ä¹Ÿéœ€è½¬åŒ–åœ°å€åŽ
+é€šè¿‡VMnet8å‘é€ç»™è™šæ‹Ÿæœºã€‚æ‹“æ‰‘å¦‚ä¸‹ï¼š
 
 ![nat topo](/img/2020-03-15/nat-topo.JPG)
 
-ÔÚÐéÄâ»úÖÐ²é¿´ipµØÖ·¿É¼û£º
+åœ¨è™šæ‹Ÿæœºä¸­æŸ¥çœ‹ipåœ°å€å¯è§ï¼š
 
 ![host ip](/img/2020-03-15/virtual-nat-addr.JPG)
 
-ÔÚËÞÖ÷»úÖÐ²é¿´VMnet8µØÖ·£º
+åœ¨å®¿ä¸»æœºä¸­æŸ¥çœ‹VMnet8åœ°å€ï¼š
 
 ![host Vmnet8](/img/2020-03-15/host-nat-addr.JPG)
 
-¿ÉÒÔ¿´µ½natÄ£Ê½ÏÂ£¬ÐéÄâ»úµÄipµØÖ·ºÍVMnet8µÄipÔÚÍ¬Ò»Íø¶Î£¬
-Í¬Ê±£¬ÔÚÐéÄâ»úping°Ù¶È£¬¿ÉÒÔ·¢ÏÖÄÜ¹»pingÍ¨¡£
+å¯ä»¥çœ‹åˆ°natæ¨¡å¼ä¸‹ï¼Œè™šæ‹Ÿæœºçš„ipåœ°å€å’ŒVMnet8çš„ipåœ¨åŒä¸€ç½‘æ®µï¼Œ
+åŒæ—¶ï¼Œåœ¨è™šæ‹Ÿæœºpingç™¾åº¦ï¼Œå¯ä»¥å‘çŽ°èƒ½å¤Ÿpingé€šã€‚
 
 ![vm nat ping](/img/2020-03-15/vm-nat-pingbaidu.JPG)
 
-## 4.host-onlyÄ£Ê½
-host-onlyÄ£Ê½ÏÂ£¬ÐéÄâÍøÂçÊÇÒ»¸ö·â±ÕµÄÍøÂç£¬Á¬½Óµ½¸ÃÄ£Ê½ÏÂµÄËùÓÐÐéÄâ»ú
-ºÍËÞÖ÷»úÖ®¼ä¿ÉÒÔ»¥ÏàÍ¨ÐÅ£¬µ«ÊÇÐéÄâ»ú²»ÄÜ·ÃÎÊÎïÀíÍøÂç¡£
-Ò²¾ÍÊÇËµ£¬Host-onlyÄ£Ê½ÓëNATÄ£Ê½·Ç³£ÏàÍ¬£¬ÓÐDHCP¹¦ÄÜ£¬µ«ÊÇ
-Ã»ÓÐNAT¹¦ÄÜ£¬ËùÒÔÎïÀíÍøÂçºÍÐéÄâÍøÂ·ÊÇ¸ôÀëµÄ£¬ÍØÆËÈçÏÂ£º
+## 4.host-onlyæ¨¡å¼
+host-onlyæ¨¡å¼ä¸‹ï¼Œè™šæ‹Ÿç½‘ç»œæ˜¯ä¸€ä¸ªå°é—­çš„ç½‘ç»œï¼Œè¿žæŽ¥åˆ°è¯¥æ¨¡å¼ä¸‹çš„æ‰€æœ‰è™šæ‹Ÿæœº
+å’Œå®¿ä¸»æœºä¹‹é—´å¯ä»¥äº’ç›¸é€šä¿¡ï¼Œä½†æ˜¯è™šæ‹Ÿæœºä¸èƒ½è®¿é—®ç‰©ç†ç½‘ç»œã€‚
+ä¹Ÿå°±æ˜¯è¯´ï¼ŒHost-onlyæ¨¡å¼ä¸ŽNATæ¨¡å¼éžå¸¸ç›¸åŒï¼Œæœ‰DHCPåŠŸèƒ½ï¼Œä½†æ˜¯
+æ²¡æœ‰NATåŠŸèƒ½ï¼Œæ‰€ä»¥ç‰©ç†ç½‘ç»œå’Œè™šæ‹Ÿç½‘è·¯æ˜¯éš”ç¦»çš„ï¼Œæ‹“æ‰‘å¦‚ä¸‹ï¼š
 
 ![hosonly topo](/img/2020-03-15/hostonly-topo.JPG)
 
-ÔÚÐéÄâ»úÖÐ²é¿´ipµØÖ·£º
+åœ¨è™šæ‹Ÿæœºä¸­æŸ¥çœ‹ipåœ°å€ï¼š
 
 ![VM hostonly ip](/img/2020-03-15/virtual-hostonly-addr.JPG)
 
-ÔÚËÞÖ÷»úÖÐ²é¿´ipµØÖ·£º
+åœ¨å®¿ä¸»æœºä¸­æŸ¥çœ‹ipåœ°å€ï¼š
 
 ![host hostonly ip](/img/2020-03-15/host-only-addr.JPG)
 
-¿ÉÒÔ¿´µ½host-onlyÄ£Ê½ÏÂ£¬ÐéÄâ»úµÄipµØÖ·ºÍVMnet1µÄipÊÇÔÚÍ¬Ò»Íø¶Î¡£
-ÔÚÐéÄâ»úÏÂ£¬ping°Ù¶È(180.101.49.12)£¬¿ÉÒÔ·¢ÏÖÎÞ·¨pingÍ¨¡£ÕâÓ¡Ö¤ÁË
-Ã»ÓÐhost-onlyÄ£Ê½ÏÂ£¬ÎïÀíÍøÂçÓëÐéÄâÍøÂçµÄ¸ôÀë¡£
+å¯ä»¥çœ‹åˆ°host-onlyæ¨¡å¼ä¸‹ï¼Œè™šæ‹Ÿæœºçš„ipåœ°å€å’ŒVMnet1çš„ipæ˜¯åœ¨åŒä¸€ç½‘æ®µã€‚
+åœ¨è™šæ‹Ÿæœºä¸‹ï¼Œpingç™¾åº¦(180.101.49.12)ï¼Œå¯ä»¥å‘çŽ°æ— æ³•pingé€šã€‚è¿™å°è¯äº†
+æ²¡æœ‰host-onlyæ¨¡å¼ä¸‹ï¼Œç‰©ç†ç½‘ç»œä¸Žè™šæ‹Ÿç½‘ç»œçš„éš”ç¦»ã€‚
 
 ![vm ping baidu](/img/2020-03-15/vm-hostonly-pingbaidu.JPG)
 
-## ²Î¿¼
-https://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html
-https://www.jianshu.com/p/305f7384cfe9
+## å‚è€ƒç›®å½•
+https://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html  
+
+https://www.jianshu.com/p/305f7384cfe9  
+
 https://blog.csdn.net/clevercode/article/details/45934233   
