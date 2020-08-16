@@ -1,6 +1,6 @@
 ---
 layout:		post
-title		benchmark和baseline的区别
+title:		benchmark和baseline的区别
 subtitle:	如何评价论文的工作成果
 date:		2020-07-04
 author		BY beta
