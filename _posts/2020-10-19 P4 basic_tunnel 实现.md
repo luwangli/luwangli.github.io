@@ -4,7 +4,7 @@ title:      P4 basic_tunnel 实现
 subtitle:   P4官方教程（二）
 date:       2020-10-19
 author:     BY beta
-header-img: img/2020-10-19/head.png
+header-img: img/2020-10-19/head.jpg
 catalog:    true
 tags:
     - 工程

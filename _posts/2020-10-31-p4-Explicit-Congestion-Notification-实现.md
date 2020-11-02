@@ -4,7 +4,7 @@ title:      p4 Explicit Congestion Notification 实现
 subtitle:   P4官方教程（四）
 date:       2020-10-31
 author:     BY beta
-header-img: img/2020-10-31/head.png
+header-img: img/2020-10-31/head.jpg
 catalog:    true
 tags:
     - 工程
