@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      p4 Multi-Hop Route Inspection 实现
-subtitle:   P4官方教程（四）
+subtitle:   P4官方教程（五）
 date:       2020-11-2
 author:     BY beta
 header-img: img/2020-11-02/head.jpg
@@ -188,7 +188,13 @@ According to the P4_16 spec, pushed elements are invalid, so we need to call set
 
    ![image-20201102203217824](https://i.loli.net/2020/11/02/WNnKzjRlIHbUaAT.png)
 
-8. 在h1终端使用end.py程序发包
+   此外，我们可以对比s1-eth2和s2-eth2端口抓取数据包的长度，发现在s1-eth2数据包的长度为，s2-eth2数据包长度为，如下两图。这是因为数据包每经过一个交换机，都会插入交换机ID(32bit)和队列长度(32bit)
+
+   ![image-20201105085519491](https://i.loli.net/2020/11/05/mSJ1rv5Ds7VAgkK.png)
+
+   ![image-20201105085554338](https://i.loli.net/2020/11/05/qshibg9moRu3cCQ.png)
+
+8. 在h1终端使用send.py程序发包
 
    ```
    ./send.py 10.0.2.2 "P4 mri" 30
